@@ -3,10 +3,6 @@ import urllib.request
 import json
 
 class handler(BaseHTTPRequestHandler):
-    def __init__(self, *args, **kwargs):
-        if args and kwargs:
-            super().__init__(*args, **kwargs)
-
     def do_GET(self):
         try:
             # Fetch Chess.com stats
@@ -15,10 +11,10 @@ class handler(BaseHTTPRequestHandler):
 
             req = urllib.request.Request(
                 url,
-                headers={'User-Agent': 'Personal Website - Contact: your-email@example.com'}
+                headers={'User-Agent': 'Mozilla/5.0 (compatible; PersonalWebsite/1.0)'}
             )
 
-            with urllib.request.urlopen(req) as response:
+            with urllib.request.urlopen(req, timeout=10) as response:
                 data = json.loads(response.read().decode())
 
             # Send response
@@ -29,10 +25,29 @@ class handler(BaseHTTPRequestHandler):
 
             self.wfile.write(json.dumps(data).encode())
 
+        except urllib.error.HTTPError as e:
+            self.send_response(e.code)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+
+            error_response = {'error': f'Chess.com API returned {e.code}: {e.reason}'}
+            self.wfile.write(json.dumps(error_response).encode())
+
+        except urllib.error.URLError as e:
+            self.send_response(500)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+
+            error_response = {'error': f'Network error: {str(e.reason)}'}
+            self.wfile.write(json.dumps(error_response).encode())
+
         except Exception as e:
             self.send_response(500)
             self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
 
-            error_response = {'error': str(e)}
+            error_response = {'error': f'Server error: {str(e)}'}
             self.wfile.write(json.dumps(error_response).encode())
