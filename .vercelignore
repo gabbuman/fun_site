@@ -1,0 +1,13 @@
+# Don't ignore anything - deploy everything
+!*
+!**/*
+
+# But do ignore these
+.git
+.claude
+node_modules
+__pycache__
+*.pyc
+local_server.py
+CHANGELOG.md
+VERCEL_FIX.md
