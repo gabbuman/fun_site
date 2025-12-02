@@ -42,7 +42,7 @@ async function loadDotaStats() {
 
             html += `
                 <div class="stat-card">
-                    <h3>🏅 Rank</h3>
+                    <h3>🏅 Rank (NA Region)</h3>
                     <div class="stat-row">
                         <span class="stat-label">Medal:</span>
                         <span class="stat-value">${rankName} ${stars > 0 ? '[' + '★'.repeat(stars) + ']' : ''}</span>
@@ -50,7 +50,11 @@ async function loadDotaStats() {
                     ${data.leaderboard_rank ? `
                     <div class="stat-row">
                         <span class="stat-label">Leaderboard:</span>
-                        <span class="stat-value">#${data.leaderboard_rank}</span>
+                        <span class="stat-value">#${data.leaderboard_rank} (~top 0.1%)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label" style="font-size: 11px; font-style: italic; color: var(--green-dim);">Hours invested:</span>
+                        <span class="stat-value" style="font-size: 11px;">Too many to count</span>
                     </div>
                     ` : ''}
                 </div>

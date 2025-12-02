@@ -35,11 +35,35 @@ body {
             rgba(0, 255, 0, 0.03) 3px
         );
     animation: scanlines 8s linear infinite;
+    position: relative;
+    overflow-x: hidden;
 }
 
 @keyframes scanlines {
     0% { background-position: 0 0; }
     100% { background-position: 0 20px; }
+}
+
+/* Floating particles effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 0, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(0, 255, 0, 0.08) 0%, transparent 20%),
+        radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.05) 0%, transparent 30%);
+    animation: float-particles 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes float-particles {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-20px) scale(1.1); opacity: 0.6; }
 }
 
 .terminal {
@@ -52,6 +76,20 @@ body {
         0 0 20px rgba(0, 255, 0, 0.3),
         inset 0 0 100px rgba(0, 255, 0, 0.05);
     margin: 20px 0;
+    position: relative;
+    z-index: 1;
+    animation: terminal-entrance 0.8s ease-out;
+}
+
+@keyframes terminal-entrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .terminal-header {
@@ -219,6 +257,7 @@ a:hover {
 .stat-value {
     color: var(--green-bright);
     font-weight: bold;
+    position: relative;
 }
 
 .loading {
@@ -402,4 +441,144 @@ a:hover {
     background: rgba(0, 255, 0, 0.15);
     box-shadow: 0 0 20px var(--green-bright);
     transform: scale(1.1);
+}
+
+/* Glitch effect for ASCII art */
+.ascii-art {
+    animation: glitch 5s infinite;
+}
+
+@keyframes glitch {
+    0%, 90%, 100% {
+        text-shadow: 0 0 10px var(--green-bright);
+    }
+    92% {
+        text-shadow: 2px 0 10px var(--green-bright), -2px 0 10px #ff00ff;
+        transform: translate(2px, 0);
+    }
+    94% {
+        text-shadow: -2px 0 10px var(--green-bright), 2px 0 10px #ff00ff;
+        transform: translate(-2px, 0);
+    }
+}
+
+/* Data stream effect */
+.stat-value {
+    animation: data-stream 3s ease-in-out infinite;
+}
+
+@keyframes data-stream {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Floating decorative elements */
+.floating-dot {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: var(--green-bright);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.floating-dot:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation: float-dot 8s ease-in-out infinite;
+}
+
+.floating-dot:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    animation: float-dot 10s ease-in-out infinite 2s;
+}
+
+.floating-dot:nth-child(3) {
+    bottom: 30%;
+    left: 20%;
+    animation: float-dot 12s ease-in-out infinite 4s;
+}
+
+@keyframes float-dot {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.6; }
+    25% { transform: translateY(-30px) translateX(20px); opacity: 0.8; }
+    50% { transform: translateY(-50px) translateX(0); opacity: 0.4; }
+    75% { transform: translateY(-30px) translateX(-20px); opacity: 0.8; }
+}
+
+/* Pulsing border effect */
+.terminal-header {
+    animation: header-pulse 4s ease-in-out infinite;
+}
+
+@keyframes header-pulse {
+    0%, 100% { background: var(--green-dim); }
+    50% { background: var(--green-primary); }
+}
+
+/* Enhanced link hover with trail effect */
+a {
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--green-bright);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 5px var(--green-bright);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Breathing effect for stat cards */
+.stat-card {
+    animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        border-color: var(--green-dim);
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+    }
+    50% {
+        border-color: var(--green-primary);
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+    }
+}
+
+/* Matrix-style number rain (subtle) */
+.stat-value::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 1px;
+    height: 20px;
+    background: linear-gradient(to bottom, transparent, var(--green-bright));
+    animation: number-rain 2s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes number-rain {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
 }
