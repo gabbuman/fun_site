@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~$ ./dota</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-title">user@shubh:~/dota$</span>
+            <div class="terminal-controls">
+                <span class="btn-close">×</span>
+                <span class="btn-minimize">−</span>
+                <span class="btn-maximize">□</span>
+            </div>
+        </div>
+
+        <div class="terminal-body">
+            <p class="prompt"><span class="user">user@shubh</span>:<span class="path">~/dota</span>$ cat profile.sh</p>
+
+            <div class="output">
+                <pre class="ascii-art">
+    ____        __           ___
+   / __ \____  / /_____ _   |__ \
+  / / / / __ \/ __/ __ `/   __/ /
+ / /_/ / /_/ / /_/ /_/ /   / __/
+/_____/\____/\__/\__,_/   /____/
+                </pre>
+
+                <p>> Steam Profile: <a href="https://steamcommunity.com/id/STEAMYOUPIECEOFSHIT/" target="_blank">STEAMYOUPIECEOFSHIT</a></p>
+                <p>> <a href="https://dota2.fandom.com/wiki/Dota_2_Wiki" target="_blank">What is Dota 2?</a></p>
+                <p>> Fetching Dota 2 stats...</p>
+            </div>
+
+            <div id="dota-stats" class="loading">Loading Dota 2 profile</div>
+
+            <div class="artwork-credit">
+                <p>Visual design inspired by retro gaming and indie album aesthetics</p>
+                <p>All graphics and animations created using pure CSS</p>
+            </div>
+
+            <p class="prompt"><span class="user">user@shubh</span>:<span class="path">~/dota</span>$ <a href="/index.html">cd ..</a></p>
+            <p class="prompt blink"><span class="user">user@shubh</span>:<span class="path">~/dota</span>$ <span class="cursor">█</span></p>
+        </div>
+    </div>
+
+    <footer class="terminal-footer">
+        <p>[ <a href="/index.html">Home</a> ] [ <a href="/chess.html">Chess</a> ] [ <a href="/solar.html">Solar</a> ]</p>
+    </footer>
+
+    <script src="/public/js/dota.js"></script>
+</body>
+</html>

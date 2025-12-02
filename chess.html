@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~$ ./chess</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-title">user@shubh:~/chess$</span>
+            <div class="terminal-controls">
+                <span class="btn-close">×</span>
+                <span class="btn-minimize">−</span>
+                <span class="btn-maximize">□</span>
+            </div>
+        </div>
+
+        <div class="terminal-body">
+            <p class="prompt"><span class="user">user@shubh</span>:<span class="path">~/chess</span>$ cat stats.sh</p>
+
+            <div class="output">
+                <pre class="ascii-art">
+  ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
+  ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
+
+
+
+
+  ♙ ♙ ♙ ♙ ♙ ♙ ♙ ♙
+  ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
+                </pre>
+
+                <p>> Fetching chess.com profile for: mesukatchess1</p>
+                <p>> Challenge me: <a href="https://www.chess.com/member/mesukatchess1" target="_blank">chess.com/member/mesukatchess1</a></p>
+            </div>
+
+            <div id="chess-stats" class="loading">Loading stats</div>
+
+            <div class="artwork-credit">
+                <p>Retro design inspired by minimalist indie aesthetics</p>
+                <p>CSS-based animations and geometric patterns</p>
+            </div>
+
+            <p class="prompt"><span class="user">user@shubh</span>:<span class="path">~/chess</span>$ <a href="/index.html">cd ..</a></p>
+            <p class="prompt blink"><span class="user">user@shubh</span>:<span class="path">~/chess</span>$ <span class="cursor">█</span></p>
+        </div>
+    </div>
+
+    <footer class="terminal-footer">
+        <p>[ <a href="/index.html">Home</a> ] [ <a href="/dota.html">Dota</a> ] [ <a href="/solar.html">Solar</a> ]</p>
+    </footer>
+
+    <script src="/public/js/chess.js"></script>
+</body>
+</html>

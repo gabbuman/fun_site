@@ -1,0 +1,5 @@
+# No external dependencies needed!
+# All Python functions use only standard library modules:
+# - urllib.request
+# - json
+# - http.server

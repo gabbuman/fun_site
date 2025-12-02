@@ -1,0 +1,19 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Retro terminal-themed personal website with Chess, Dota, and Solar data",
+  "scripts": {
+    "dev": "python local_server.py",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "personal-website",
+    "terminal",
+    "retro",
+    "chess",
+    "dota",
+    "solar"
+  ],
+  "author": "Shubh",
+  "license": "MIT"
+}

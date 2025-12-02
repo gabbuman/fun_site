@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~$ ./solar</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-title">user@shubh:~/solar$</span>
+            <div class="terminal-controls">
+                <span class="btn-close">×</span>
+                <span class="btn-minimize">−</span>
+                <span class="btn-maximize">□</span>
+            </div>
+        </div>
+
+        <div class="terminal-body">
+            <p class="prompt"><span class="user">user@shubh</span>:<span class="path">~/solar</span>$ cat irradiance.sh</p>
+
+            <div class="output">
+                <pre class="ascii-art">
+    ____
+   / __ \____  _      _____  _____
+  / /_/ / __ \| | /| / / _ \/ ___/
+ / ____/ /_/ /| |/ |/ /  __/ /
+/_/    \____/ |__/|__/\___/_/
+
+ _____ ____  __    ___    ____
+/ ___// __ \/ /   /   |  / __ \
+\__ \/ / / / /   / /| | / /_/ /
+___/ / /_/ / /___/ ___ |/ _, _/
+/____/\____/_____/_/  |_/_/ |_|
+                </pre>
+
+                <p>> Fetching solar irradiance data...</p>
+                <p>> 2 years analyzing solar systems & troubleshooting embedded inverters.</p>
+                <p>> Here's what the sun's doing today.</p>
+            </div>
+
+            <div id="solar-data" class="loading">Loading solar data</div>
+
+            <div class="artwork-credit">
+                <p>Visual aesthetics inspired by retro indie artwork</p>
+                <p>Design philosophy: Foster the People album covers, minimalist retro-futurism</p>
+                <p>All visuals created using CSS animations and geometric patterns</p>
+            </div>
+
+            <p class="prompt"><span class="user">user@shubh</span>:<span class="path">~/solar</span>$ <a href="/index.html">cd ..</a></p>
+            <p class="prompt blink"><span class="user">user@shubh</span>:<span class="path">~/solar</span>$ <span class="cursor">█</span></p>
+        </div>
+    </div>
+
+    <footer class="terminal-footer">
+        <p>[ <a href="/index.html">Home</a> ] [ <a href="/chess.html">Chess</a> ] [ <a href="/dota.html">Dota</a> ]</p>
+    </footer>
+
+    <script src="/public/js/solar.js"></script>
+</body>
+</html>

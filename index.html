@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~$ whoami</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-title">user@shubh:~$</span>
+            <div class="terminal-controls">
+                <span class="btn-close">×</span>
+                <span class="btn-minimize">−</span>
+                <span class="btn-maximize">□</span>
+            </div>
+        </div>
+
+        <div class="terminal-body">
+            <pre class="ascii-art">
+ _____ _           _     _
+/  ___| |         | |   | |
+\ `--.| |__  _   _| |__ | |__
+ `--. \ '_ \| | | | '_ \| '_ \
+/\__/ / | | | |_| | |_) | | | |
+\____/|_| |_|\__,_|_.__/|_| |_|
+            </pre>
+
+            <div class="content">
+                <p class="prompt"><span class="user">user@shubh</span>:<span class="path">~</span>$ cat about.txt</p>
+                <p class="output">
+                    > Engineer. Gamer. Data Analyst.<br>
+                    > Spent 2 years with solar inverters - analytics & embedded troubleshooting.<br>
+                    > Now building things on the web.<br>
+                    > Dota player. Chess warrior.<br>
+                </p>
+
+                <p class="prompt"><span class="user">user@shubh</span>:<span class="path">~</span>$ ls -la</p>
+                <div class="output file-list">
+                    <div class="file-item">drwxr-xr-x  2 shubh shubh 4096 Dec 01 15:45 <a href="/chess.html">chess/</a></div>
+                    <div class="file-item">drwxr-xr-x  2 shubh shubh 4096 Dec 01 15:45 <a href="/dota.html">dota/</a></div>
+                    <div class="file-item">drwxr-xr-x  2 shubh shubh 4096 Dec 01 15:45 <a href="/solar.html">solar/</a></div>
+                    <div class="file-item">-rw-r--r--  1 shubh shubh  256 Dec 01 15:45 <a href="https://github.com/yourusername" target="_blank">github.txt</a></div>
+                </div>
+
+                <p class="prompt"><span class="user">user@shubh</span>:<span class="path">~</span>$ echo "Welcome to my corner of the internet"</p>
+                <p class="output">Welcome to my corner of the internet</p>
+
+                <div class="retro-grid">
+                    <div class="icon-row">
+                        <span class="retro-badge">Engineer</span>
+                        <span class="retro-badge">Gamer</span>
+                        <span class="retro-badge">Analyst</span>
+                        <div class="geometric-accent"></div>
+                    </div>
+                </div>
+
+                <p class="prompt blink"><span class="user">user@shubh</span>:<span class="path">~</span>$ <span class="cursor">█</span></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="terminal-footer">
+        <p>[ <a href="https://steamcommunity.com/id/STEAMYOUPIECEOFSHIT/" target="_blank">Steam</a> ]
+           [ <a href="https://www.chess.com/member/mesukatchess1" target="_blank">Chess.com</a> ]
+           [ Made with ☕ and Python ]</p>
+    </footer>
+</body>
+</html>
